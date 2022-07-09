@@ -1,7 +1,9 @@
 #packages
 from bs4 import BeautifulSoup
 import requests
-#
+
+# user input
+fileName = input('how should we name your file: ')
 
 ## requesting
 url = 'https://www.crummy.com/software/BeautifulSoup/bs4/doc/'
@@ -19,8 +21,9 @@ for i in soup.findAll(class_="section"):
     
 s = ''.join(c)
 
-print(s)
+
 
 # make a file and write on it
-with open('file_to_save.txt', 'w') as open_file:
+with open(f'{fileName}.txt', 'w') as open_file:
     open_file.write(s)
+d
