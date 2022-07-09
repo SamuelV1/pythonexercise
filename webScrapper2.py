@@ -15,7 +15,6 @@ r = requests.get(url)
 soup = BeautifulSoup(r.text, 'html.parser')
 
 for i in soup.findAll(class_="section"):
-   # print(i.text.replace("\n", " ").strip())
    
     c.append(i.text.replace("\n", " ").strip())
     
@@ -26,4 +25,3 @@ s = ''.join(c)
 # make a file and write on it
 with open(f'{fileName}.txt', 'w') as open_file:
     open_file.write(s)
-d
