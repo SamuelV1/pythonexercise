@@ -2,6 +2,8 @@ x = " --- "
 y = "|   " 
 
 def boardPrinter(size):
-        print(size*(size*x+'\n'+(size+1)*y+'\n')+size*x)
+    for index in range(size):
+        print(x * size)
+        print(y *(size + 1))
 
-boardPrinter(4)
+boardPrinter(2)
