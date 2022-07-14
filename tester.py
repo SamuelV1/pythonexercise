@@ -1,4 +1,4 @@
-# this is a playground codes here not supossed to work or look pretty 
+# this is a playground codes here ARE NOT supossed to work or look pretty 
 
 import requests
 from bs4 import BeautifulSoup
