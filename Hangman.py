@@ -1,5 +1,5 @@
-word = "eva"
-# ideais eu posso criar uma lista de _ do tamanho da palavra ai eu pego o index da letra e mudo o _ para a letra
+word = "evaporate"
+# problema o .index so pega o primeiro index o jogo não funciona em palavras com a mesma letra 2 vezes
 playing = True
 
 placeholder = []
@@ -15,9 +15,10 @@ while playing:
     print(*placeholder)
     user_guess = input("enter your letter: ")
     if user_guess in word:
-        user_guess_index = word.index(user_guess)
+        indices = [i for i, x in enumerate(word) if x == user_guess]
         #using slicing to replace the word
-        placeholder = placeholder[:user_guess_index]+[user_guess]+placeholder[user_guess_index+1:]
+        for i in range(len(indices)):
+            placeholder = placeholder[:indices[i]]+[user_guess]+placeholder[indices[i]+1:]
         #checks if the user already guessed the whole word
         if "".join(placeholder) == word:
             print("CONGRATULATION")
