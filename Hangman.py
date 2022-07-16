@@ -1,8 +1,70 @@
-word = "evaporate"
+import random
+from random import randint
+
+
+#re using code from wordpicker
+
+with open('listofwords.txt', 'r') as f:
+    wordpool = [word for word in f]
+word = random.choice(wordpool)
+    
+
+
+print(word)
 # problema o .index so pega o primeiro index o jogo não funciona em palavras com a mesma letra 2 vezes
 playing = True
-
+chances = 0
 placeholder = []
+hangmanpics = ['''
++---+
+| |
+|
+|
+|
+|
+=========''', '''
++---+
+| |
+O |
+|
+|
+|
+=========''', '''
++---+
+| |
+O |
+| |
+|
+|
+=========''', '''
++---+
+| |
+O |
+/| |
+|
+|
+=========''', '''
++---+
+| |
+O |
+/|\ |
+|
+|
+=========''', '''
++---+
+| |
+O |
+/|\ |
+/ |
+|
+=========''', '''
++---+
+| |
+O |
+/|\ |
+/ \ |
+|
+=========''']
 
 for i in range(len(word)):
     placeholder.append("_")
@@ -24,6 +86,18 @@ while playing:
             print("CONGRATULATION")
             print("thanks for playing")
             playing = False
+    else:
+        if chances >= 6:
+            playing = False
+            print(" ")
+            print(" ")
+            print("YOU FAILED")
+            print(f"the word was: {word}")
+        print(hangmanpics[chances])
+        chances += 1
+        
+        
+        
         
         
 
