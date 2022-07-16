@@ -8,10 +8,6 @@ with open('listofwords.txt', 'r') as f:
     wordpool = [word for word in f]
 word = random.choice(wordpool)
     
-
-
-print(word)
-# problema o .index so pega o primeiro index o jogo não funciona em palavras com a mesma letra 2 vezes
 playing = True
 chances = 0
 placeholder = []
@@ -68,8 +64,6 @@ O |
 
 for i in range(len(word)):
     placeholder.append("_")
-
-
 
 print("WELCOME TO HANGMAN")
 while playing:
