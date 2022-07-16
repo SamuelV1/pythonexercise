@@ -1,13 +1,14 @@
 # this is a playground codes here ARE NOT supossed to work or look pretty 
+word = "evaporate"
+placeholder = []
+c = len(word)
+print(c)
+d = word.index("p")
+print(d)
+print(word[1])
 
-import requests
-from bs4 import BeautifulSoup
+for i in range(c):
+    placeholder.append("_")
+    
+print(*placeholder)
 
-
-
-base_url = "http://www.vanityfair.com/society/2014/06/monica-lewinsky-humiliation-culture"
-r = requests.get(base_url)
-soup = BeautifulSoup(r.text, 'html.parser')
-
-for text in soup.find_all(class_="content-section"):
-    print(text.get_text())
